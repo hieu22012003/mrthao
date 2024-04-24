@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-dark: #373334;
+      --color-light: #eaeaea;
+      --color-carrot: orange;
+      --color-stem: green;
+    }
+
+    html,
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-light);
+      min-height: 100%;
+    }
+
+    .carrot {
+      transform: rotate(-25deg);
+      -webkit-animation: sway 1s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55) alternate;
+      animation: sway 1s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55) alternate;
+    }
+
+    .stem {
+      position: relative;
+      z-index: 1;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 30px solid var(--color-stem);
+    }
+
+    .stem:after,
+    .stem:before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background-color: var(--color-stem);
+      position: absolute;
+      border-radius: 50%;
+      top: -35px;
+    }
+
+    .stem:after {
+      left: -15px;
+    }
+
+    .tuft {
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: var(--color-stem);
+      position: absolute;
+      border-radius: 50%;
+      top: -45px;
+      left: -8px;
+    }
+
+    .root {
+      position: relative;
+      top: -12px;
+      width: 20px;
+      height: 60px;
+      background-color: var(--color-carrot);
+      margin: 0 auto;
+      z-index: 0;
+    }
+
+    .root:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid var(--color-carrot);
+      position: absolute;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    .stripe {
+      width: 33%;
+      height: 2px;
+      background-color: var(--color-dark);
+      position: absolute;
+      z-index: 3;
+      opacity: 0.3;
+    }
+
+    .stripe:first-child {
+      top: 10px;
+      right: 0;
+    }
+
+    .stripe:nth-child(2) {
+      top: 20px;
+    }
+
+    .stripe:nth-child(3) {
+      top: 30px;
+      right: 0;
+    }
+
+    .stripe:nth-child(4) {
+      top: 40px;
+    }
+
+    .stripe:nth-child(5) {
+      top: 50px;
+      right: 0;
+    }
+
+    .stripe:last-child {
+      top: 60px;
+    }
+
+    @-webkit-keyframes sway {
+      to {
+        transform: rotate(25deg);
+      }
+    }
+
+    @keyframes sway {
+      to {
+        transform: rotate(25deg);
+      }
+    }
+  </style>
+</head>
+
+<body translate="no">
+  <center><h2>hãy ấn vô củ cà rốt và điều bất ngờ sẽ bay ra</h2></center>
+  
+
+
+  <hr>
+  <a href="heart.html">
+  <div class="carrot">
+    <div class="stem"><span class="tuft"></span></div>
+    <div class="root">
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+      <span class="stripe"></span>
+    </div>
+  </div>
+</a>
+
+</body>
+
+</html>
